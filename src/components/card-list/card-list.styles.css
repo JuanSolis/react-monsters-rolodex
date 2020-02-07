@@ -5,7 +5,7 @@
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-gap: 20px;
 }
-
+/* Media Queris For Responsive Design */
 @media only screen and (max-width: 1360px) {
     .card-list { 
         width: 85vw;
