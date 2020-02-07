@@ -27,11 +27,22 @@ class App extends Component {
 
   render() {
     const {monsters, searchField } = this.state; 
+
     const filteredMonsters = monsters.filter(monster => 
       monster.name.toLowerCase()
       .includes(searchField
         .toLowerCase()
         ));
+
+    const filterResult = (filteredMonsters) => {
+      var size = filteredMonsters.length; 
+      if(size > 0){
+          return true;
+      }
+      else {
+        return false;
+      }
+    }
 
     return(
       <div className="App">
@@ -41,7 +52,7 @@ class App extends Component {
           handleChange = {this.handleChange}
           >
         </SearchBox>
-        <CardList monsters={filteredMonsters}/>
+        <CardList monsters={filteredMonsters} stateOfCardList={filterResult(filteredMonsters)}/>
       </div>
     )
   }
